@@ -10,7 +10,6 @@ class UserEncoder(nn.Module):
             config.num_filters
         )
 
-
     def forward(self, clicked_news_vector):
         """
         Args:
