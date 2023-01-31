@@ -123,7 +123,7 @@ class NewsEncoder(nn.Module):
                 "sub_category": shape (batch_size)
             }
         Returns
-            (shape): batch_size, 
+            (shape): (batch_size, num_filters)
         """
         text_vectors = [
             encoder(news[name].to(device)) for name, encoder in self.text_encoders.items()
