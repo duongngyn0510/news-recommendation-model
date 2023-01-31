@@ -117,10 +117,10 @@ class NewsEncoder(nn.Module):
         Args:
             news:
             {
-                "title": batch_size * num_words_title
-                "body": batch_size * num_words_body
-                "category": batch_size,
-                "sub_category": batch_size
+                "title": shape (batch_size, num_words_title)
+                "body": shape (batch_size, num_words_body)
+                "category": shape (batch_size),
+                "sub_category": shape (batch_size)
             }
         Returns
             (shape): batch_size, 
