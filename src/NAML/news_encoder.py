@@ -123,7 +123,7 @@ class NewsEncoder(nn.Module):
                 "sub_category": shape (batch_size)
             }
         Returns
-            (shape): (batch_size, num_filters)
+            news_vector (shape): (batch_size, num_filters)
         """
         text_vectors = [
             encoder(news[name].to(device)) for name, encoder in self.text_encoders.items()
@@ -135,5 +135,5 @@ class NewsEncoder(nn.Module):
         assert len(vectors) == len(news)
         # batch_size, 4, num_filters
         vectors = torch.stack(vectors, dim=1)
-        final_news_vector = self.final_attention(vectors)
-        return final_news_vector
+        news_vector = self.final_attention(vectors)
+        return news_vector
