@@ -15,7 +15,7 @@ class UserEncoder(nn.Module):
         Args:
             clicked_news_vector: batch_size, num_click_news, num_filters
         Returns:
-            user representation vector : batch_size, num_filters
+            user vector : batch_size, num_filters
         """
         user_vector = self.additive(clicked_news_vector)
         return user_vector
